@@ -35,6 +35,10 @@ body {
   margin: 0 auto;
   outline: 2px solid red;
 }
+.section {
+  padding-top: 94px;
+  padding-bottom: 94px;
+}
 .visually-hidden {
   position: absolute;
   white-space: nowrap;
@@ -54,6 +58,10 @@ body {
   padding-top: 24px;
   padding-bottom: 25px;
 }
+.header .container {
+  display: flex;
+  align-items: center;
+}
 .header-nav .current {
   color: var(--accent-color);
 }
@@ -65,6 +73,7 @@ body {
   line-height: 1.19;
   letter-spacing: 0.03em;
   color: #000000;
+  margin-right: 93px;
 }
 .logo-first {
   font-family: "Raleway";
@@ -74,6 +83,16 @@ body {
   line-height: 1.19;
   letter-spacing: 0.03em;
   color: #2196f3;
+}
+.header-nav-list,
+.header-list {
+  display: flex;
+}
+.header-connect {
+  margin-left: auto;
+}
+.header-item:not(:last-child) {
+  margin-right: 50px;
 }
 
 .header-link {
@@ -107,18 +126,21 @@ body {
 .header-tel:focus {
   color: var(--accent-color);
 }
+.header-tel {
+  margin-left: 50px;
+}
 
 /* ----------about----------*/
-.about {
+.hero {
   background-color: #2f303a;
   padding-top: 200px;
   padding-bottom: 200px;
+  text-align: center;
 }
-.about-title {
+.hero-title {
   font-weight: 900;
   font-size: 44px;
   line-height: 1.36;
-  text-align: center;
   letter-spacing: 0.06em;
   text-transform: uppercase;
   color: #ffffff;
@@ -126,24 +148,26 @@ body {
   margin-bottom: 30px;
   margin: 0 auto;
 }
-.about-btn {
+.hero-btn {
   font-family: "Roboto";
   font-style: normal;
   font-weight: 700;
   font-size: 16px;
   line-height: 1.88;
-  display: flex;
-  align-items: center;
-  text-align: center;
+  display: block;
   letter-spacing: 0.06em;
   color: #ffffff;
   background-color: #2196f3;
   margin: 0 auto;
+  height: 50px;
+  min-width: 200px;
 }
 /* ----------feature----------*/
-.feature {
-  padding-top: 94px;
-  padding-bottom: 94px;
+.feature-list {
+  display: flex;
+}
+.feature-item + .feature-item {
+  margin-left: 30px;
 }
 .feature-title {
   font-weight: 700;
@@ -152,6 +176,7 @@ body {
   letter-spacing: 0.03em;
   text-transform: uppercase;
   color: var(--title-color);
+  margin-bottom: 10px;
 }
 .feature-text {
   font-size: 14px;
@@ -160,6 +185,15 @@ body {
   color: #757575;
 }
 /* ----------work----------*/
+.work {
+  padding-top: 0;
+}
+.work-list {
+  display: flex;
+}
+.work-item + .work-item {
+  margin-left: 30px;
+}
 .work-title {
   font-weight: 700;
   font-size: 36px;
@@ -167,15 +201,23 @@ body {
   text-align: center;
   letter-spacing: 0.03em;
   color: var(--title-color);
+  margin-bottom: 50px;
 }
 /* ----------team----------*/
 
 .team {
   background-color: #f5f4fa;
 }
+.team-list {
+  display: flex;
+  margin-left: -30px;
+}
 .team-item {
   background-color: #ffffff;
+  flex-basis: calc(100% / 4 - 30px);
+  margin-left: 30px;
 }
+
 .team-title {
   font-weight: 700;
   font-size: 36px;
@@ -184,6 +226,11 @@ body {
   letter-spacing: 0.03em;
 
   color: var(--title-color);
+  margin-bottom: 50px;
+}
+.team-cards {
+  padding-top: 30px;
+  padding-bottom: 30px;
 }
 .team-subtitle {
   font-weight: 500;
@@ -192,6 +239,7 @@ body {
   text-align: center;
   letter-spacing: 0.03em;
   color: #212121;
+  margin-bottom: 10px;
 }
 .team-text {
   font-size: 16px;
@@ -203,6 +251,8 @@ body {
 /* ----------footer----------*/
 .footer {
   background-color: #2f303a;
+  padding-top: 60px;
+  padding-bottom: 60px;
 }
 .footer-logo {
   font-family: "Raleway";
@@ -212,11 +262,15 @@ body {
   line-height: 1.19;
   letter-spacing: 0.03em;
   color: #ffffff;
+  display: block;
+  margin-bottom: 20px;
 }
 .contacts-address {
   font-style: normal;
 }
-
+.contacts-item + .contacts-item {
+  margin-top: 9px;
+}
 .futer-address {
   font-size: 14px;
   line-height: 1.71;
@@ -242,6 +296,14 @@ body {
 
 /* -------фильтр--------- */
 
+.filtre-list {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 50px;
+}
+.filtre-item + .filtre-item {
+  margin-left: 8px;
+}
 .filtre-btn {
   font-family: "Roboto";
   font-style: normal;
@@ -258,17 +320,28 @@ body {
   border: none;
   font-family: inherit;
   display: inline-block;
+  padding: 6px 22px;
 }
 .filtre-btn:hover,
 .filtre-btn:focus {
   color: var(--accent-color);
 }
 /* ----проект---- */
-.project {
+.project-list {
   background-color: #eeeeee;
+  display: flex;
+  flex-wrap: wrap;
+  margin-left: -30px;
+  margin-bottom: -30px;
 }
 .project-item {
   background-color: #ffffff;
+  width: calc(100 / 3 - 30px);
+  margin-left: 30px;
+  margin-bottom: 30px;
+}
+.project-item :nth-child(3n) {
+  margin-right: 0;
 }
 .project-title {
   font-weight: 700;
